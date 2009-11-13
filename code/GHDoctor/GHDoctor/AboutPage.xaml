@@ -1,0 +1,23 @@
+﻿<navigation:Page 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+	xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+	x:Class="GHDoctor.AboutPage" 
+	Title="AboutPage Page"
+	d:DesignWidth="800" d:DesignHeight="600">
+	
+	<Grid x:Name="LayoutRoot" >
+		<data:DataGrid>
+			<data:DataGrid.Background>
+				<SolidColorBrush Color="{StaticResource Background}"/>
+			</data:DataGrid.Background>
+		</data:DataGrid>
+		<TextBox Height="93" HorizontalAlignment="Center" Margin="8,55,8,0" VerticalAlignment="Top" Background="{x:Null}" BorderThickness="0" FontSize="48" Foreground="Black" Text="About" TextWrapping="Wrap"/>
+		<TextBlock Margin="8,148,8,88" Text="Aplicación creada para Seminario..." TextWrapping="Wrap"/>
+		<Button HorizontalAlignment="Right" Margin="0,0,20,19" VerticalAlignment="Bottom" Width="75" Content="Principal" Click="Button_Click"/>
+	</Grid>
+</navigation:Page>
