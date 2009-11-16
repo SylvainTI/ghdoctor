@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GHDoctor">
+  <DataContextMoniker Name="/GHDoctorDataContext" />
+  <nestedChildShapes>
+    <classShape Id="211b3bc7-5ca6-4d73-9026-89bd045803c2" absoluteBounds="5.875, 1.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/GHDoctorDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="659158bd-ae99-4e5b-8232-79e2faa6be78" absoluteBounds="5.89, 2.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="174e19c9-84db-4232-bd2d-699d176f2069" absoluteBounds="2.5, 1.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/GHDoctorDataContext/CommonQuery" />
+      <nestedChildShapes>
+        <elementListCompartment Id="41135d4c-dc4a-4346-8efd-20c0f92f86b3" absoluteBounds="2.515, 2.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.875 : 2.44314697265625); (4.5 : 2.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GHDoctorDataContext/Category/Category_CommonQuery" />
+      <nodes>
+        <classShapeMoniker Id="211b3bc7-5ca6-4d73-9026-89bd045803c2" />
+        <classShapeMoniker Id="174e19c9-84db-4232-bd2d-699d176f2069" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
