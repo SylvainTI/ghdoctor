@@ -1,0 +1,59 @@
+﻿<navigation:Page 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+	xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input" xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+	x:Class="GHDoctor.DiagnoserPage" 
+	Title="DiagnoserPage Page"
+	d:DesignWidth="800" d:DesignHeight="600">
+	
+	<Grid x:Name="LayoutRoot" >
+		<Grid.Background>
+			<SolidColorBrush Color="{StaticResource Background}"/>
+		</Grid.Background>
+		<Rectangle StrokeThickness="6" RadiusX="12" RadiusY="12" Height="340" HorizontalAlignment="Left" Margin="108,136,0,0" VerticalAlignment="Top" Width="584" Canvas.ZIndex="-1">
+			<Rectangle.Stroke>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#FF223032" Offset="1"/>
+					<GradientStop Color="#FFA6F1F9"/>
+					<GradientStop Color="#FF669499"/>
+					<GradientStop Color="#FF669499" Offset="0.67"/>
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+		</Rectangle>
+		<Button HorizontalAlignment="Left" Margin="701,543,0,0" VerticalAlignment="Top" Width="75" Content="Home" Click="Button_Click" Height="33" FontSize="16"/>
+		<dataInput:Label FontSize="48" Height="72" HorizontalAlignment="Left" Margin="249,8,0,0" VerticalAlignment="Top" Width="303" Content="Diagnosticar"/>
+		<Path Stretch="Fill" StrokeThickness="6" Height="8" Margin="8,80,0,0" VerticalAlignment="Top" UseLayoutRounding="False" Data="M8,80 L792,80" HorizontalAlignment="Left" Width="785">
+			<Path.Stroke>
+				<RadialGradientBrush>
+					<GradientStop Color="Black"/>
+					<GradientStop Color="#FF668F94" Offset="1"/>
+				</RadialGradientBrush>
+			</Path.Stroke>
+		</Path>
+		<dataInput:Label FontSize="16" Height="18" HorizontalAlignment="Left" Margin="141,170,0,0" VerticalAlignment="Top" Width="48" Content="Sitio:"/>
+		<TextBox FontSize="16" HorizontalAlignment="Left" Margin="199,166,0,0" VerticalAlignment="Top" Width="312" Text="ingrese la URL de su sitio" TextWrapping="Wrap"/>
+		<Button FontSize="16" Height="32" HorizontalAlignment="Left" Margin="531,166,0,0" VerticalAlignment="Top" Width="136" Content="Diagnosticar" Click="Diagnose_Click"/>
+		<Rectangle StrokeThickness="3" RadiusX="12" RadiusY="12" Margin="128,232,0,0" HorizontalAlignment="Left" Width="539" Height="192" VerticalAlignment="Top">
+			<Rectangle.Stroke>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#FF223032" Offset="0.115"/>
+					<GradientStop Color="#FFA6F1F9"/>
+					<GradientStop Color="#FF669499"/>
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+		</Rectangle>
+		<dataInput:Label FontSize="16" Height="22" HorizontalAlignment="Left" Margin="172,253,0,0" VerticalAlignment="Top" Width="145" Content="Tipos de queries:" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment"/>
+		<CheckBox HorizontalAlignment="Left" Margin="199,317,0,0" VerticalAlignment="Top" Content="Archivos" FontSize="16" Width="118"/>
+		<CheckBox FontSize="16" HorizontalAlignment="Left" Margin="199,346,0,0" Width="118" Content="Contraseñas" VerticalAlignment="Top"/>
+		<CheckBox FontSize="16" HorizontalAlignment="Left" Margin="199,288,0,0" Width="118" Content="Todos" VerticalAlignment="Top"/>
+		<CheckBox FontSize="16" HorizontalAlignment="Left" Margin="199,375,0,0" VerticalAlignment="Top" Width="118" Content="..."/>
+		<CheckBox FontSize="16" Margin="336,317,0,0" VerticalAlignment="Top" Content="Archivos" HorizontalAlignment="Left" Width="118"/>
+		<CheckBox FontSize="16" Margin="336,346,0,0" Content="Contraseñas" VerticalAlignment="Top" HorizontalAlignment="Left" Width="118"/>
+		<CheckBox FontSize="16" Margin="488,317,0,0" VerticalAlignment="Top" Content="Archivos" HorizontalAlignment="Left" Width="118"/>
+		<CheckBox FontSize="16" Margin="488,346,0,0" Content="Contraseñas" VerticalAlignment="Top" HorizontalAlignment="Left" Width="118"/>
+	</Grid>
+</navigation:Page>

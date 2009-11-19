@@ -26,5 +26,19 @@ namespace GHDoctor
             mainView.Children.Clear();
             mainView.Children.Add(new AboutPage());
 		}
+		
+		private void WebSearch_Click(object sender, System.Windows.RoutedEventArgs e)
+		{
+            Grid mainView = (Grid)App.Current.RootVisual;
+            mainView.Children.Clear();
+            mainView.Children.Add(new WebSearchPage());
+		}
+
+		private void Diagnoser_Click(object sender, System.Windows.RoutedEventArgs e)
+		{
+            Grid mainView = (Grid)App.Current.RootVisual;
+            mainView.Children.Clear();
+            mainView.Children.Add(new DiagnoserPage());
+		}
 	}
 }

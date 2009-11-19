@@ -4,6 +4,6 @@
 	x:Class="GHDoctor.App">
 	<Application.Resources>
 		<!-- Resources scoped at the Application level should be defined here. -->
-		<Color x:Key="Background">#FFE9FCFF</Color>
+		<Color x:Key="Background">#FFF1FAFB</Color>
 	</Application.Resources>
 </Application>
