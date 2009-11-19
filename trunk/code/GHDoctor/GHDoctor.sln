@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GHDoctorSite", "GHDoctorSite", "{8FE1C711-0018-4606-9E2F-F34CC9B40BF0}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GHDoctorSite", "GHDoctorSite\", "{8FE1C711-0018-4606-9E2F-F34CC9B40BF0}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFramework = "3.5"
 		Debug.AspNetCompiler.VirtualPath = "/GHDoctorSite"
@@ -18,7 +18,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GHDoctorSite", "GHDoctorSit
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "1583"
+		VWDPort = "2874"
 		ProjOutputReferences = "{8c568f43-db3c-49bc-be5e-4e704196a2b5}|ClientBin|false;"
 	EndProjectSection
 EndProject
