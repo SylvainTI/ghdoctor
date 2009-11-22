@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="GHDoctor" Class="GHDoctorDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=IGNACIO-LAPTOP\SQLEXPRESS;Initial Catalog=GHDoctor;Integrated Security=True;Pooling=False" SettingsObjectName="GHDoctor.Core.Properties.Settings" SettingsPropertyName="GHDoctorConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=GHDoctor;Integrated Security=True;Pooling=False" SettingsObjectName="GHDoctor.Core.Properties.Settings" SettingsPropertyName="GHDoctorConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CATEGORY" Member="Categories">
     <Type Name="Category">
       <Column Name="CODE" Member="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="SHORT_DESCRIPTION" Member="ShortDescription" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="LONG_DESCRIPTION" Member="LongDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Association Name="Category_CommonQuery" Member="CommonQueries" ThisKey="Code" OtherKey="CategoryCode" Type="CommonQuery" />
+      <Association Name="Category_CommonQuery" Member="CommonQueries" AccessModifier="Internal" ThisKey="Code" OtherKey="CategoryCode" Type="CommonQuery" />
     </Type>
   </Table>
   <Table Name="dbo.COMMONQUERIES" Member="CommonQueries">

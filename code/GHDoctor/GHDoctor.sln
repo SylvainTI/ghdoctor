@@ -1,27 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GHDoctorSite", "GHDoctorSite\", "{8FE1C711-0018-4606-9E2F-F34CC9B40BF0}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFramework = "3.5"
-		Debug.AspNetCompiler.VirtualPath = "/GHDoctorSite"
-		Debug.AspNetCompiler.PhysicalPath = "GHDoctorSite\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\GHDoctorSite\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/GHDoctorSite"
-		Release.AspNetCompiler.PhysicalPath = "GHDoctorSite\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\GHDoctorSite\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "2874"
-		ProjOutputReferences = "{8c568f43-db3c-49bc-be5e-4e704196a2b5}|ClientBin|false;"
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHDoctor", "GHDoctor\GHDoctor.csproj", "{8C568F43-DB3C-49BC-BE5E-4E704196A2B5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1CFE70D9-90AB-43CF-A207-4FB4E88A4C4D}"
@@ -34,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHDoctorTests", "GHDoctorTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHDoctor.Core", "GHDoctor.Core\GHDoctor.Core.csproj", "{A8E53625-13FD-469E-AC8D-F1ED0C8BC6A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHDoctor.Website", "GHDoctor.Website\GHDoctor.Website.csproj", "{C5DF30A0-5606-45A5-82BF-F223C60F8ADF}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = GHDoctor.vsmdi
@@ -43,10 +24,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8FE1C711-0018-4606-9E2F-F34CC9B40BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FE1C711-0018-4606-9E2F-F34CC9B40BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FE1C711-0018-4606-9E2F-F34CC9B40BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FE1C711-0018-4606-9E2F-F34CC9B40BF0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C568F43-DB3C-49BC-BE5E-4E704196A2B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C568F43-DB3C-49BC-BE5E-4E704196A2B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C568F43-DB3C-49BC-BE5E-4E704196A2B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +36,10 @@ Global
 		{A8E53625-13FD-469E-AC8D-F1ED0C8BC6A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8E53625-13FD-469E-AC8D-F1ED0C8BC6A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8E53625-13FD-469E-AC8D-F1ED0C8BC6A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5DF30A0-5606-45A5-82BF-F223C60F8ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5DF30A0-5606-45A5-82BF-F223C60F8ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5DF30A0-5606-45A5-82BF-F223C60F8ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5DF30A0-5606-45A5-82BF-F223C60F8ADF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using Newtonsoft.Json;
+using GHDoctor.Core.Repository;
 
 namespace GHDoctor.Core.Services
 {
@@ -22,6 +23,18 @@ namespace GHDoctor.Core.Services
                 Search(query.SearchString, siteName);
 
             }        
+        }
+
+        public IList<Category> GetAllCategories()
+        {
+            GHDoctorRepository ghDoctorRepository = new GHDoctorRepository();
+            return ghDoctorRepository.GetCategories();
+        }
+
+        public IList<CommonQuery> GetCommonQueries(int categoryCode)
+        {
+            GHDoctorRepository ghDoctorRepository = new GHDoctorRepository();
+            return ghDoctorRepository.GetCommonQueries(categoryCode);
         }
 
         private void Search(string query, string siteName)
