@@ -3,7 +3,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ExpressionBlendVersion>3.0.1927.0</ExpressionBlendVersion>
-    <ProjectGuid>{8c568f43-db3c-49bc-be5e-4e704196a2b5}</ProjectGuid>
+    <ProjectGuid>{8C568F43-DB3C-49BC-BE5E-4E704196A2B5}</ProjectGuid>
     <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -49,6 +49,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217" />
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Windows" />
     <Reference Include="mscorlib" />
     <Reference Include="system" />
@@ -107,6 +113,11 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ModelServicesReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="WebSearchPage.xaml.cs">
       <DependentUpon>WebSearchPage.xaml</DependentUpon>
     </Compile>
@@ -117,5 +128,37 @@
   <ItemGroup>
     <Resource Include="Properties\AppManifest.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ModelServicesReference\ModelServices.disco" />
+    <None Include="Service References\ModelServicesReference\configuration91.svcinfo" />
+    <None Include="Service References\ModelServicesReference\configuration.svcinfo" />
+    <None Include="Service References\ModelServicesReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ModelServicesReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ModelServicesReference\GHDoctor.ModelServicesReference.GetAllCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ModelServicesReference\GHDoctor.ModelServicesReference.GetCommonQueriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ModelServicesReference\ModelServices.wsdl" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight\V3.0\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
