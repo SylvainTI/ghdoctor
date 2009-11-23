@@ -16,7 +16,6 @@ namespace GHDoctor
 {
     public partial class WebSearchPage : Page
     {
-        ModelServicesSoapClient modelServicesClient = new ModelServicesSoapClient();
 
         public WebSearchPage()
         {
@@ -25,6 +24,7 @@ namespace GHDoctor
             categories.SelectionChanged += new SelectionChangedEventHandler(categories_SelectionChanged);
             queries.IsEnabled = false;
 
+            ModelServicesSoapClient modelServicesClient = new ModelServicesSoapClient();
             modelServicesClient.GetAllCategoriesCompleted +=
                 new EventHandler<GetAllCategoriesCompletedEventArgs>(modelServicesClient_GetAllCategoriesCompleted);
             modelServicesClient.GetAllCategoriesAsync();
@@ -32,6 +32,7 @@ namespace GHDoctor
 
         private void categories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            ModelServicesSoapClient modelServicesClient = new ModelServicesSoapClient();
             Category selectedCategory = (Category)categories.SelectedItem;
             modelServicesClient.GetCommonQueriesCompleted += new EventHandler<GetCommonQueriesCompletedEventArgs>(modelServicesClient_GetCommonQueriesCompleted);
             modelServicesClient.GetCommonQueriesAsync(selectedCategory.Code);
@@ -63,16 +64,22 @@ namespace GHDoctor
 		
 		private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Grid mainView = (Grid)App.Current.RootVisual;
-            mainView.Children.Clear();
-            mainView.Children.Add(new MainPage());
+            if (this._contentLoaded)
+            {
+                Grid mainView = (Grid)App.Current.RootVisual;
+                mainView.Children.Clear();
+                mainView.Children.Add(new MainPage());
+            }
         }
 
 		private void Buscar_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
-            Grid mainView = (Grid)App.Current.RootVisual;
-            mainView.Children.Clear();
-            mainView.Children.Add(new WebSearchPageResults());
+            if (this._contentLoaded)
+            {
+                Grid mainView = (Grid)App.Current.RootVisual;
+                mainView.Children.Clear();
+                mainView.Children.Add(new WebSearchPageResults());
+            }
 		}
     }
 }

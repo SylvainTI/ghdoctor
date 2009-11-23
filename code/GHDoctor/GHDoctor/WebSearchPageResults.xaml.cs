@@ -23,13 +23,17 @@ namespace GHDoctor
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+
         }
 
 		private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Grid mainView = (Grid)App.Current.RootVisual;
-            mainView.Children.Clear();
-            mainView.Children.Add(new MainPage());
+            if (this._contentLoaded)
+            {
+                Grid mainView = (Grid)App.Current.RootVisual;
+                mainView.Children.Clear();
+                mainView.Children.Add(new MainPage());
+            }
         }
     }
 }

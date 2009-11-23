@@ -27,15 +27,22 @@ namespace GHDoctor
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Grid mainView = (Grid)App.Current.RootVisual;
-            mainView.Children.Clear();
-            mainView.Children.Add(new MainPage());        }
+            if (this._contentLoaded)
+            {
+                Grid mainView = (Grid)App.Current.RootVisual;
+                mainView.Children.Clear();
+                mainView.Children.Add(new MainPage());
+            }
+        }
 
         private void Diagnose_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Grid mainView = (Grid)App.Current.RootVisual;
-            mainView.Children.Clear();
-            mainView.Children.Add(new DiagnoserResultsPage());
+            if (this._contentLoaded)
+            {
+                Grid mainView = (Grid)App.Current.RootVisual;
+                mainView.Children.Clear();
+                mainView.Children.Add(new DiagnoserResultsPage());
+            }
         }
     }
 }
