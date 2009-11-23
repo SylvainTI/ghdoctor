@@ -5,6 +5,8 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GHDoctor.Core.Repository;
 using GHDoctor.Core.Services;
+using System.IO;
+using System.Web.Script.Serialization;
 
 namespace GHDoctorTests
 {
@@ -61,7 +63,7 @@ namespace GHDoctorTests
         //
         #endregion
 
-        [TestMethod]
+        
         public void TraeTodasLasCategoriasYConsulta()
         {
             IGHDoctorRepository repository = new GHDoctorRepository();
@@ -76,5 +78,21 @@ namespace GHDoctorTests
             // Prueba con las primeras 2 para que no tarde tanto el test.
             service.GetResults(queries.Take(2).ToList(), "fi.uba.ar");
         }
+
+        [TestMethod]
+        public void PruebaDeserializarJSONdeGoogle()
+        {
+            // Prueba con una respuesta a una consulta que está en un archivo de texto.
+            string example = File.ReadAllText(@"..\..\..\GHDoctorTests\SearchResultExample.txt");
+            var serializer = new JavaScriptSerializer();
+            var jsonObject = serializer.Deserialize<GoogleSearchResults>(example);
+            Assert.IsNotNull(jsonObject);
+            Assert.IsTrue(jsonObject.GetType() == typeof(GoogleSearchResults));
+            Assert.IsNotNull(jsonObject.responseData);
+            Assert.IsNotNull(jsonObject.responseData.cursor);
+            Assert.AreEqual(jsonObject.responseData.cursor.estimatedResultCount, "46500");
+        }
+
+
     }
 }
