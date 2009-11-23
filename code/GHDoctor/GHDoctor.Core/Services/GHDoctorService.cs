@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Net;
-using Newtonsoft.Json;
 using GHDoctor.Core.Repository;
+using System.Runtime.Serialization;
+using System.Web.Script.Serialization;
 
 namespace GHDoctor.Core.Services
 {
@@ -37,12 +38,81 @@ namespace GHDoctor.Core.Services
             return ghDoctorRepository.GetCommonQueries(categoryCode);
         }
 
-        private void Search(string query, string siteName)
+        
+
+        public void Search(string query, string siteName)
         {
             WebClient webClient = new WebClient();
             string address = @"http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" +
                 query + " site:" + siteName;
             string result = webClient.DownloadString(address);
+            var serializer = new JavaScriptSerializer();
+            GoogleSearchResults searchResult = serializer.Deserialize<GoogleSearchResults>(result);
+            // TODO. Ver que se hace con searchResult
         }
+    }
+
+    [DataContract]
+    public class GoogleSearchResults
+    {
+        [DataMember]
+        public ResponseData responseData { get; set; }
+
+        [DataMember]
+        public string responseDetails {get; set;}
+
+        [DataMember]
+        public string responseStatus { get; set; }
+
+
+    }
+
+    [DataContract]    
+    public class Cursor    
+    {
+        [DataMember]
+        public string estimatedResultCount { get; set; }
+
+        [DataMember]
+        public int currentPageIndex { get; set; }
+
+        [DataMember]
+        public string moreResultsUrl { get; set; }    
+    }
+
+    [DataContract]
+    public class ResponseData
+    {
+        [DataMember]
+        public IEnumerable<Results> results { get; set; }
+
+        [DataMember]
+        public Cursor cursor { get; set; }
+
+    }
+
+    [DataContract]
+    public class Results
+    {
+        [DataMember]
+        public string unescapedUrl { get; set; }
+
+        [DataMember]
+        public string url { get; set; }
+
+        [DataMember]
+        public string visibleUrl { get; set; }
+
+        [DataMember]
+        public string cacheUrl { get; set; }
+
+        [DataMember]
+        public string title { get; set; }
+
+        [DataMember]
+        public string titleNoFormatting { get; set; }
+
+        [DataMember]
+        public string content { get; set; }
     }
 }
