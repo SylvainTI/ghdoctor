@@ -118,6 +118,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\SearchEngineService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="WebSearchPage.xaml.cs">
       <DependentUpon>WebSearchPage.xaml</DependentUpon>
     </Compile>
@@ -139,10 +144,18 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\SearchEngineService\SearchEngineService.disco" />
+    <None Include="Service References\SearchEngineService\configuration91.svcinfo" />
+    <None Include="Service References\SearchEngineService\configuration.svcinfo" />
+    <None Include="Service References\SearchEngineService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ModelServicesReference\" />
+    <WCFMetadataStorage Include="Service References\SearchEngineService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ModelServicesReference\GHDoctor.ModelServicesReference.GetAllCategoriesResponse.datasource">
@@ -152,6 +165,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ModelServicesReference\ModelServices.wsdl" />
+    <None Include="Service References\SearchEngineService\GHDoctor.SearchEngineService.GetNumberOfResultsForSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SearchEngineService\SearchEngineService.wsdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight\V3.0\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>

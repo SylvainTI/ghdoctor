@@ -21,7 +21,7 @@ namespace GHDoctor.Core.Services
 
             foreach (var query in queries)
             {
-                Search(query.SearchString, siteName);
+                SearchSite(query.SearchString, siteName);
 
             }        
         }
@@ -40,7 +40,7 @@ namespace GHDoctor.Core.Services
 
         
 
-        public void Search(string query, string siteName)
+        public GoogleSearchResults SearchSite(string query, string siteName)
         {
             WebClient webClient = new WebClient();
             string address = @"http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" +
@@ -48,7 +48,28 @@ namespace GHDoctor.Core.Services
             string result = webClient.DownloadString(address);
             var serializer = new JavaScriptSerializer();
             GoogleSearchResults searchResult = serializer.Deserialize<GoogleSearchResults>(result);
+            return searchResult;
             // TODO. Ver que se hace con searchResult
+        }
+
+        public GoogleSearchResults Search(string query)
+        {
+            WebClient webClient = new WebClient();
+            string address = @"http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" +
+                query;
+            string result = webClient.DownloadString(address);
+            var serializer = new JavaScriptSerializer();
+            GoogleSearchResults searchResult = serializer.Deserialize<GoogleSearchResults>(result);
+            return searchResult;
+            // TODO. Ver que se hace con searchResult
+        }
+
+
+
+        public long GetNumberOfResultsForSearch(string query)
+        {
+            GoogleSearchResults searchResult = this.Search(query);
+            return long.Parse(searchResult.responseData.cursor.estimatedResultCount);
         }
     }
 

@@ -37,7 +37,7 @@
 				</RadialGradientBrush>
 			</Path.Stroke>
 		</Path>
-		<TextBlock Margin="88,168,0,0" Text="Aplicación creada para Seminario..." TextWrapping="Wrap" FontSize="16" HorizontalAlignment="Left" Width="616" Height="304" VerticalAlignment="Top"/>
+		<TextBlock Margin="88,168,0,0" TextWrapping="Wrap" FontSize="16" HorizontalAlignment="Left" Width="616" Height="304" VerticalAlignment="Top"><Run FontWeight="Bold" Text="TRABAJO PRACTICO "/><Run FontWeight="Bold" Text="FINAL"/><LineBreak/><Run FontWeight="Bold" Text="Google Hacking"/><LineBreak/><Run Text=""/><LineBreak/><Run TextDecorations="Underline" Text="Docentes"/><LineBreak/><Run Text="Pagola, Hugo"/><LineBreak/><Run Text="Dams, Alberto"/><LineBreak/><Run Text=""/><LineBreak/><Run TextDecorations="Underline" Text="Grupo 1:"/><LineBreak/><Run Text="Ferrai, Damián"/><Run Text=" "/><Run Text="83182"/><Run Text=""/><LineBreak/><Run Text="Raymundi, Lionel"/><Run Text=" "/><Run Text="84639"/><Run Text=""/><LineBreak/><Run Text="Salvatore, Santiago Andrés"/><Run Text=" "/><Run Text="84087"/><Run Text=""/><LineBreak/><Run Text="Varela, Ignacio"/><Run Text=" "/><Run Text="84031"/></TextBlock>
 		<Button HorizontalAlignment="Left" Margin="701,543,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="33" FontSize="16" Content="Home"/>
 		<dataInput:Label FontSize="48" Height="72" HorizontalAlignment="Left" Margin="257,8,0,0" VerticalAlignment="Top" Content="Acerca de..."/>
 	</Grid>
