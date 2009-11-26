@@ -34,7 +34,8 @@
 				</RadialGradientBrush>
 			</Path.Stroke>
 		</Path>
-		<dataInput:Label Margin="160,192,0,0" FontSize="24" Content="Se han encontrado 123 resultados!" HorizontalAlignment="Left" Width="464" Height="40" VerticalAlignment="Top"/>
-		<Button Height="56" Margin="302,320,0,0" VerticalAlignment="Top" Content="Ver en buscador" FontSize="16" HorizontalAlignment="Left" Width="200"/>
+		<Button Height="56" Margin="302,320,0,0" VerticalAlignment="Top" Content="Ver en buscador" FontSize="16" HorizontalAlignment="Left" Width="200" Click="GotoWebPage_Click"/>
+		<Button HorizontalAlignment="Left" Margin="32,544,0,0" VerticalAlignment="Top" Width="75" Content="Volver" Click="VolverBtn_Click" Height="33" FontSize="16" d:LayoutOverrides="HorizontalAlignment"/>
+		<TextBlock x:Name="ResultsSummaryLbl" Margin="144,160,0,0" Text="Se han encontrado 123 resultados!" TextWrapping="Wrap" FontSize="24" LineHeight="8" TextAlignment="Center" HorizontalAlignment="Left" Width="496" Height="104" VerticalAlignment="Top"/>
 	</Grid>
 </navigation:Page>

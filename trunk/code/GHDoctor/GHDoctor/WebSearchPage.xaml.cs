@@ -22,16 +22,24 @@ namespace GHDoctor
             InitializeComponent();
 
             categories.SelectionChanged += new SelectionChangedEventHandler(categories_SelectionChanged);
+            queries.SelectionChanged += new SelectionChangedEventHandler(queries_SelectionChanged);
             queries.IsEnabled = false;
+			BuscarBtn.IsEnabled = false;
 
             ModelServicesSoapClient modelServicesClient = new ModelServicesSoapClient();
             modelServicesClient.GetAllCategoriesCompleted +=
                 new EventHandler<GetAllCategoriesCompletedEventArgs>(modelServicesClient_GetAllCategoriesCompleted);
             modelServicesClient.GetAllCategoriesAsync();
+
+
         }
 
         private void categories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            queries.ItemsSource = null; // limpiar el dropbox
+            queries.IsEnabled = false;
+			BuscarBtn.IsEnabled = false;
+
             ModelServicesSoapClient modelServicesClient = new ModelServicesSoapClient();
             Category selectedCategory = (Category)categories.SelectedItem;
             modelServicesClient.GetCommonQueriesCompleted += new EventHandler<GetCommonQueriesCompletedEventArgs>(modelServicesClient_GetCommonQueriesCompleted);
@@ -78,8 +86,14 @@ namespace GHDoctor
             {
                 Grid mainView = (Grid)App.Current.RootVisual;
                 mainView.Children.Clear();
-                mainView.Children.Add(new WebSearchPageResults());
+                String searchString = ((CommonQuery)queries.SelectedItem).SearchString;
+                mainView.Children.Add(new WebSearchPageResults(searchString));
             }
+		}
+
+		private void queries_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+		{
+			BuscarBtn.IsEnabled = true;
 		}
     }
 }
