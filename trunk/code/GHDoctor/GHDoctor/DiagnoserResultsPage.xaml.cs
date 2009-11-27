@@ -34,5 +34,15 @@ namespace GHDoctor
                 mainView.Children.Add(new MainPage());
             }
         }
+
+        private void GoBackButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (this._contentLoaded)
+            {
+                Grid mainView = (Grid)App.Current.RootVisual;
+                mainView.Children.Clear();
+                mainView.Children.Add(new DiagnoserPage());
+            }
+        }
     }
 }

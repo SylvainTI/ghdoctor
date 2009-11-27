@@ -63,7 +63,7 @@ namespace GHDoctorTests
         //
         #endregion
 
-        
+        [TestMethod]
         public void TraeTodasLasCategoriasYConsulta()
         {
             IGHDoctorRepository repository = new GHDoctorRepository();

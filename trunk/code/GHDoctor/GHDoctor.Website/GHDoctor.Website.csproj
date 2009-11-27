@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientBin\GHDoctor.xap" />
-    <Content Include="Default.html" />
+    <Content Include="Default.htm" />
     <Content Include="favicon.ico" />
     <Content Include="WebServices\ModelServices.asmx" />
     <Content Include="Silverlight.js" />
@@ -97,12 +97,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>2237</DevelopmentServerPort>
           <DevelopmentServerVPath>/GHDoctor</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost/GHDoctor</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

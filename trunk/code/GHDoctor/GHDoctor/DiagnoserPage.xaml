@@ -35,9 +35,9 @@
 			</Path.Stroke>
 		</Path>
 		<dataInput:Label FontSize="16" Height="18" HorizontalAlignment="Left" Margin="141,170,0,0" VerticalAlignment="Top" Width="48" Content="Sitio:"/>
-		<TextBox FontSize="16" HorizontalAlignment="Left" Margin="199,166,0,0" VerticalAlignment="Top" Width="312" Text="ingrese la URL de su sitio" TextWrapping="Wrap"/>
-		<Button FontSize="16" Height="32" HorizontalAlignment="Left" Margin="531,166,0,0" VerticalAlignment="Top" Width="136" Content="Diagnosticar" Click="Diagnose_Click"/>
-		<Rectangle StrokeThickness="3" RadiusX="12" RadiusY="12" Margin="128,232,0,0" HorizontalAlignment="Left" Width="539" Height="192" VerticalAlignment="Top">
+		<TextBox FontSize="16" HorizontalAlignment="Left" Margin="199,166,0,0" VerticalAlignment="Top" Width="289" Text="ingrese la URL de su sitio" TextWrapping="Wrap"/>
+		<Button FontSize="16" Height="32" HorizontalAlignment="Left" Margin="512,166,0,0" VerticalAlignment="Top" Width="120" Content="Diagnosticar" Click="Diagnose_Click"/>
+		<Rectangle StrokeThickness="3" RadiusX="12" RadiusY="12" Margin="128,232,0,0" HorizontalAlignment="Left" Width="539" Height="216" VerticalAlignment="Top">
 			<Rectangle.Stroke>
 				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
 					<GradientStop Color="#FF223032" Offset="0.115"/>
@@ -47,13 +47,8 @@
 			</Rectangle.Stroke>
 		</Rectangle>
 		<dataInput:Label FontSize="16" Height="22" HorizontalAlignment="Left" Margin="172,253,0,0" VerticalAlignment="Top" Width="145" Content="Tipos de queries:" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment"/>
-		<CheckBox HorizontalAlignment="Left" Margin="199,317,0,0" VerticalAlignment="Top" Content="Archivos" FontSize="16" Width="118"/>
-		<CheckBox FontSize="16" HorizontalAlignment="Left" Margin="199,346,0,0" Width="118" Content="Contraseñas" VerticalAlignment="Top"/>
-		<CheckBox FontSize="16" HorizontalAlignment="Left" Margin="199,288,0,0" Width="118" Content="Todos" VerticalAlignment="Top"/>
-		<CheckBox FontSize="16" HorizontalAlignment="Left" Margin="199,375,0,0" VerticalAlignment="Top" Width="118" Content="..."/>
-		<CheckBox FontSize="16" Margin="336,317,0,0" VerticalAlignment="Top" Content="Archivos" HorizontalAlignment="Left" Width="118"/>
-		<CheckBox FontSize="16" Margin="336,346,0,0" Content="Contraseñas" VerticalAlignment="Top" HorizontalAlignment="Left" Width="118"/>
-		<CheckBox FontSize="16" Margin="488,317,0,0" VerticalAlignment="Top" Content="Archivos" HorizontalAlignment="Left" Width="118"/>
-		<CheckBox FontSize="16" Margin="488,346,0,0" Content="Contraseñas" VerticalAlignment="Top" HorizontalAlignment="Left" Width="118"/>
+		<ListBox x:Name="QueryTypes" Margin="172,295,0,0" HorizontalAlignment="Left" Width="460" Height="136" VerticalAlignment="Top" SelectionMode="Extended" SelectionChanged="QueryTypes_SelectionChanged"/>
+		<Button x:Name="SelectAllQueries" FontSize="16" Height="32" HorizontalAlignment="Left" Margin="552,253,0,0" VerticalAlignment="Top" Width="80" Content="Todas" Click="SelectAllQueries_Click"/>
+		<TextBox x:Name="ErrorMsgTxt" Height="40" Margin="128,488,0,0" VerticalAlignment="Top" Text="Mensaje de Error" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Foreground="#FFFC0000" TextAlignment="Center" Background="{x:Null}" SelectionBackground="White" HorizontalAlignment="Left" Width="539" BorderBrush="{x:Null}" SelectionForeground="#FF0019FF" IsReadOnly="True" Style="{StaticResource TextBoxStyleWithoutBackground}"/>
 	</Grid>
 </navigation:Page>
