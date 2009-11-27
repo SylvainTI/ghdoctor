@@ -56,10 +56,10 @@
   </wsdl:binding>
   <wsdl:service name="SearchEngineService">
     <wsdl:port name="SearchEngineServiceSoap" binding="tns:SearchEngineServiceSoap">
-      <soap:address location="http://localhost:2237/GHDoctor/WebServices/SearchEngineService.asmx" />
+      <soap:address location="http://dalef.dyndns.org/GHDoctor/WebServices/SearchEngineService.asmx" />
     </wsdl:port>
     <wsdl:port name="SearchEngineServiceSoap12" binding="tns:SearchEngineServiceSoap12">
-      <soap12:address location="http://localhost:2237/GHDoctor/WebServices/SearchEngineService.asmx" />
+      <soap12:address location="http://dalef.dyndns.org/GHDoctor/WebServices/SearchEngineService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -43,5 +43,6 @@
 			</controls:TreeViewItem>
 			<controls:TreeViewItem Margin="0" Header="Contraseñas - 6 amenazas"/>
 		</controls:TreeView>
+		<Button x:Name="GoBackBtn" HorizontalAlignment="Left" Margin="40,543,0,0" VerticalAlignment="Top" Width="75" Content="Volver" Click="GoBackButton_Click" Height="33" FontSize="16" d:LayoutOverrides="HorizontalAlignment"/>
 	</Grid>
 </navigation:Page>

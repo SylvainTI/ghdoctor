@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:2237/GHDoctor/WebServices/SearchEngineService.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://dalef.dyndns.org/GHDoctor/WebServices/SearchEngineService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SearchEngineService.disco" MetadataType="Disco" ID="4e2d15fd-0cda-43fa-8e1f-a1acc67ec77b" SourceId="1" SourceUrl="http://localhost:2237/GHDoctor/WebServices/SearchEngineService.asmx?disco" />
-    <MetadataFile FileName="SearchEngineService.wsdl" MetadataType="Wsdl" ID="f3e8bbc5-77c9-41fe-812b-1ad8953d8df5" SourceId="1" SourceUrl="http://localhost:2237/GHDoctor/WebServices/SearchEngineService.asmx?wsdl" />
+    <MetadataFile FileName="SearchEngineService.disco" MetadataType="Disco" ID="4e2d15fd-0cda-43fa-8e1f-a1acc67ec77b" SourceId="1" SourceUrl="http://dalef.dyndns.org/GHDoctor/WebServices/SearchEngineService.asmx?disco" />
+    <MetadataFile FileName="SearchEngineService.wsdl" MetadataType="Wsdl" ID="f3e8bbc5-77c9-41fe-812b-1ad8953d8df5" SourceId="1" SourceUrl="http://dalef.dyndns.org/GHDoctor/WebServices/SearchEngineService.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

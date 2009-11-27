@@ -121,10 +121,10 @@
   </wsdl:binding>
   <wsdl:service name="ModelServices">
     <wsdl:port name="ModelServicesSoap" binding="tns:ModelServicesSoap">
-      <soap:address location="http://localhost:2237/GHDoctor/WebServices/ModelServices.asmx" />
+      <soap:address location="http://dalef.dyndns.org/GHDoctor/WebServices/ModelServices.asmx" />
     </wsdl:port>
     <wsdl:port name="ModelServicesSoap12" binding="tns:ModelServicesSoap12">
-      <soap12:address location="http://localhost:2237/GHDoctor/WebServices/ModelServices.asmx" />
+      <soap12:address location="http://dalef.dyndns.org/GHDoctor/WebServices/ModelServices.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

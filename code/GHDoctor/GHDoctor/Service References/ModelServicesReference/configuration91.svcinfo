@@ -100,10 +100,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ModelServicesSoap" contract="ModelServicesReference.ModelServicesSoap" bindingType="basicHttpBinding" address="http://localhost:2237/GHDoctor/WebServices/ModelServices.asmx" bindingConfiguration="ModelServicesSoap">
+    <endpoint name="ModelServicesSoap" contract="ModelServicesReference.ModelServicesSoap" bindingType="basicHttpBinding" address="http://dalef.dyndns.org/GHDoctor/WebServices/ModelServices.asmx" bindingConfiguration="ModelServicesSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:2237/GHDoctor/WebServices/ModelServices.asmx</serializedValue>
+          <serializedValue>http://dalef.dyndns.org/GHDoctor/WebServices/ModelServices.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
