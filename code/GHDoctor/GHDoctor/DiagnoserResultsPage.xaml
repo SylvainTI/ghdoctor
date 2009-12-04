@@ -43,6 +43,6 @@
 			<controls:TreeViewItem Margin="0" Header="Contraseñas - 6 amenazas"/>
 		</controls:TreeView>
 		<Button x:Name="GoBackBtn" HorizontalAlignment="Left" Margin="40,543,0,0" VerticalAlignment="Top" Width="75" Content="Volver" Click="GoBackButton_Click" Height="33" FontSize="16" d:LayoutOverrides="HorizontalAlignment"/>
-		<TextBox x:Name="ThreatsFoundTxt" Margin="128,168,0,0" Text="Buscando..." TextWrapping="Wrap" FontSize="21.333" TextAlignment="Center" HorizontalAlignment="Left" Width="544" Height="48" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBackground="{x:Null}" SelectionForeground="{x:Null}"/>
+		<TextBlock x:Name="ThreatsFoundTxt" Height="80" Margin="136,152,0,0" VerticalAlignment="Top" Text="Buscando..." TextWrapping="Wrap" FontSize="21.333" TextAlignment="Center" HorizontalAlignment="Left" Width="528"/>
 	</Grid>
 </navigation:Page>

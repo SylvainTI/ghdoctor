@@ -67,13 +67,20 @@ namespace GHDoctor.Core.Services
         public long GetNumberOfResultsForSearch(string query)
         {
             GoogleSearchResults searchResult = this.Search(query);
-            return long.Parse(searchResult.responseData.cursor.estimatedResultCount);
+
+            if (searchResult.responseData.results.Count() == 0)
+                return 0;
+            else
+                return long.Parse(searchResult.responseData.cursor.estimatedResultCount);
         }
 
         public long GetNumberOfResultsForSiteSearch(string query, string site)
         {
             GoogleSearchResults searchResult = this.SearchSite(query, site);
-            return long.Parse(searchResult.responseData.cursor.estimatedResultCount);
+            if (searchResult.responseData.results.Count() == 0)
+                return 0;
+            else
+                return long.Parse(searchResult.responseData.cursor.estimatedResultCount);
         }
         
     }
