@@ -144,13 +144,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\SearchEngineService\SearchEngineService.disco" />
     <None Include="Service References\SearchEngineService\configuration91.svcinfo" />
     <None Include="Service References\SearchEngineService\configuration.svcinfo" />
     <None Include="Service References\SearchEngineService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\SearchEngineService\SearchEngineService1.disco" />
     <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
@@ -171,7 +171,7 @@
     <None Include="Service References\SearchEngineService\GHDoctor.SearchEngineService.GetNumberOfResultsForSiteSearchResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SearchEngineService\SearchEngineService1.wsdl" />
+    <None Include="Service References\SearchEngineService\SearchEngineService.wsdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight\V3.0\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>

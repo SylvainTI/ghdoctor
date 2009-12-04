@@ -24,7 +24,6 @@ namespace GHDoctor
 
 
         private long modelSvcResultsToObtain = 0;
-        private long searchEngineSvcResultsToObtain = 0;
         private long queriesResultsObtained = 0;
 
         private ModelServicesSoapClient modelSvc;
@@ -34,13 +33,13 @@ namespace GHDoctor
 
         public DiagnoserResultsPage(String url, IEnumerable<Category> categories)
         {
-            svcClient = new SearchEngineServiceSoapClient();
-            svcClient.GetNumberOfResultsForSearchCompleted += new EventHandler<GetNumberOfResultsForSearchCompletedEventArgs>(svcClient_GetNumberOfResultsForSearchCompleted);
-
             InitializeComponent();
 
             this.url = url;
             this.categories = categories;
+
+            svcClient = new SearchEngineServiceSoapClient();
+            svcClient.GetNumberOfResultsForSiteSearchCompleted += new EventHandler<GetNumberOfResultsForSiteSearchCompletedEventArgs>(svcClient_GetNumberOfResultsForSiteSearchCompleted);
 
             modelSvc = new ModelServicesSoapClient();
             modelSvc.GetCommonQueriesCompleted += new EventHandler<GetCommonQueriesCompletedEventArgs>(modelSvc_GetCommonQueriesCompleted);
@@ -53,7 +52,7 @@ namespace GHDoctor
             
         }
 
-        void modelSvc_GetCommonQueriesCompleted(object sender, GetCommonQueriesCompletedEventArgs e)
+        private void modelSvc_GetCommonQueriesCompleted(object sender, GetCommonQueriesCompletedEventArgs e)
         {
             lock (this)
             {
@@ -61,61 +60,66 @@ namespace GHDoctor
                 queries.AddRange(e.Result);
                 if (modelSvcResultsToObtain == 0)
                 {
-                    searchEngineSvcResultsToObtain += queries.Count;
-                    foreach (CommonQuery query in queries)
-                    {/*
-                        SearchEngineServiceSoapClient seSvc = new SearchEngineServiceSoapClient();
-                        seSvc.GetNumberOfResultsForSiteSearchCompleted += new EventHandler<GetNumberOfResultsForSiteSearchCompletedEventArgs>(seSvc_GetNumberOfResultsForSiteSearchCompleted);
-
-                        seSvc.GetNumberOfResultsForSiteSearchAsync(query.SearchString, url);
-                        */
-                        svcClient.GetNumberOfResultsForSearchAsync(query.SearchString + " site: " + url, query);
-                       
-                        //break;
+                    // done
+                    if (queries.Count > 0)
+                    {
+                        CallSearchEngine();
                     }
-                    
-                    // done...
+                    else
+                    {
+                        // TODO: que hacer?
+                    }
                 }
             }
         }
 
-        private void svcClient_GetNumberOfResultsForSearchCompleted(object sender, GetNumberOfResultsForSearchCompletedEventArgs e)
+        private void CallSearchEngine()
+        {
+            CommonQuery query = queries.FirstOrDefault();
+            queries.Remove(query);
+
+            if (query.SearchString.Contains("site"))
+            {
+                CallSearchEngine();
+                return;
+            }
+
+            try
+            {
+                svcClient.GetNumberOfResultsForSiteSearchAsync(query.SearchString, url, query);
+            }
+            catch (Exception)
+            {
+                if (queries.Count > 0)
+                {
+                    CallSearchEngine();
+                }
+                else
+                {
+                    svcClient_GetNumberOfResultsForSiteSearchCompleted(this, null);
+                }
+            }
+        }
+
+        private void svcClient_GetNumberOfResultsForSiteSearchCompleted(object sender, GetNumberOfResultsForSiteSearchCompletedEventArgs e)
         {
             lock (this)
             {
-                CommonQuery query = (CommonQuery)e.UserState;
-                queriesResultsObtained += e.Result;
-                searchEngineSvcResultsToObtain -= queriesResultsObtained;
-
-                ThreatsFoundTxt.Text = "Buscando... (" + queriesResultsObtained + " amenazas encontradas)";
-
-                if (searchEngineSvcResultsToObtain == 0)
+                if (queries.Count > 0)
                 {
-                    ThreatsFoundTxt.Text = "Se han encontrado " + queriesResultsObtained + " amenazas";
+                    CommonQuery query = (CommonQuery)e.UserState;
+                    queriesResultsObtained += e.Result;
+                    ThreatsFoundTxt.Text = "Buscando... (" + queriesResultsObtained + " amenazas encontradas)";
+                    CallSearchEngine();
+                }
+                else
+                {
                     // DONE
+                    ThreatsFoundTxt.Text = "Se han encontrado " + queriesResultsObtained + " amenazas";
                 }
             }
         }
 
-
-        void seSvc_GetNumberOfResultsForSiteSearchCompleted(object sender, GetNumberOfResultsForSiteSearchCompletedEventArgs e)
-        {
-            lock (this)
-            {
-                CommonQuery query = (CommonQuery)e.UserState;
-                queriesResultsObtained += e.Result;
-                searchEngineSvcResultsToObtain -= queriesResultsObtained;
-
-                ThreatsFoundTxt.Text = "Buscando... (se han encontrado " + queriesResultsObtained + " amenazas)";
-
-                if (searchEngineSvcResultsToObtain == 0)
-                {
-                    ThreatsFoundTxt.Text = "Se han encontrado " + queriesResultsObtained + " amenazas";
-                    // DONE
-                }
-            }
-
-        }
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
