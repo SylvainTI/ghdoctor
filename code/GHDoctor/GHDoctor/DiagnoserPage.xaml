@@ -35,9 +35,9 @@
 			</Path.Stroke>
 		</Path>
 		<dataInput:Label FontSize="16" Height="18" HorizontalAlignment="Left" Margin="141,170,0,0" VerticalAlignment="Top" Width="48" Content="Sitio:"/>
-		<TextBox FontSize="16" HorizontalAlignment="Left" Margin="199,166,0,0" VerticalAlignment="Top" Width="289" Text="ingrese la URL de su sitio" TextWrapping="Wrap"/>
+		<TextBox x:Name="UrlTxt" FontSize="16" HorizontalAlignment="Left" Margin="199,166,0,0" VerticalAlignment="Top" Width="289" Text="ingrese la URL de su sitio" TextWrapping="Wrap"/>
 		<Button FontSize="16" Height="32" HorizontalAlignment="Left" Margin="512,166,0,0" VerticalAlignment="Top" Width="120" Content="Diagnosticar" Click="Diagnose_Click"/>
-		<Rectangle StrokeThickness="3" RadiusX="12" RadiusY="12" Margin="128,232,0,0" HorizontalAlignment="Left" Width="539" Height="216" VerticalAlignment="Top">
+		<Rectangle StrokeThickness="2" RadiusX="12" RadiusY="12" Margin="147,240,0,0" HorizontalAlignment="Left" Width="501" Height="208" VerticalAlignment="Top">
 			<Rectangle.Stroke>
 				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
 					<GradientStop Color="#FF223032" Offset="0.115"/>

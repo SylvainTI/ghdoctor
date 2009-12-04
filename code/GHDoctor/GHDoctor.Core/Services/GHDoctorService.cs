@@ -38,8 +38,6 @@ namespace GHDoctor.Core.Services
             return ghDoctorRepository.GetCommonQueries(categoryCode);
         }
 
-        
-
         public GoogleSearchResults SearchSite(string query, string siteName)
         {
             WebClient webClient = new WebClient();
@@ -49,7 +47,7 @@ namespace GHDoctor.Core.Services
             var serializer = new JavaScriptSerializer();
             GoogleSearchResults searchResult = serializer.Deserialize<GoogleSearchResults>(result);
             return searchResult;
-            // TODO. Ver que se hace con searchResult
+            
         }
 
         public GoogleSearchResults Search(string query)
@@ -61,7 +59,7 @@ namespace GHDoctor.Core.Services
             var serializer = new JavaScriptSerializer();
             GoogleSearchResults searchResult = serializer.Deserialize<GoogleSearchResults>(result);
             return searchResult;
-            // TODO. Ver que se hace con searchResult
+            
         }
 
 
@@ -71,6 +69,13 @@ namespace GHDoctor.Core.Services
             GoogleSearchResults searchResult = this.Search(query);
             return long.Parse(searchResult.responseData.cursor.estimatedResultCount);
         }
+
+        public long GetNumberOfResultsForSiteSearch(string query, string site)
+        {
+            GoogleSearchResults searchResult = this.SearchSite(query, site);
+            return long.Parse(searchResult.responseData.cursor.estimatedResultCount);
+        }
+        
     }
 
     [DataContract]

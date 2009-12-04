@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
 using GHDoctor.ModelServicesReference;
+using System.Text.RegularExpressions;
 
 namespace GHDoctor
 {
@@ -34,11 +35,6 @@ namespace GHDoctor
             QueryTypes.DisplayMemberPath = "ShortDescription";
         }
 
-        // Executes when the user navigates to this page.
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-        }
-
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             if (this._contentLoaded)
@@ -58,15 +54,33 @@ namespace GHDoctor
                     ErrorMsgTxt.Text = "Seleccione al menos una categoria para la búsqueda";
                     ErrorMsgTxt.Visibility = Visibility.Visible;
                 }
+                else if (!ValidateURL(UrlTxt.Text))
+                {
+                    ErrorMsgTxt.Text = "Por favor, ingrese una URL válida";
+                    ErrorMsgTxt.Visibility = Visibility.Visible;
+                }
                 else
                 {
                     ErrorMsgTxt.Visibility = Visibility.Collapsed;
 
                     Grid mainView = (Grid)App.Current.RootVisual;
                     mainView.Children.Clear();
-                    mainView.Children.Add(new DiagnoserResultsPage());
+
+                    List<Category> selectedCategories = new List<Category>();
+                    foreach (Category category in QueryTypes.SelectedItems)
+                    {   
+                        selectedCategories.Add(category);
+                    }
+
+                    mainView.Children.Add(new DiagnoserResultsPage(UrlTxt.Text, selectedCategories));
                 }
             }
+        }
+
+        private bool ValidateURL(String url)
+        {
+            Regex regex = new Regex(@"(?:https?|ftp)://[-a-zA-Z0-9.]+(:(6553[0-5]|655[0-2][0-9]|65[0-4][0-9][0-9]|6[0-4][0-9][0-9][0-9]|\d{2,4}|[1-9]))?");
+            return (regex.IsMatch(url));
         }
 
         private void SelectAllQueries_Click(object sender, System.Windows.RoutedEventArgs e)
