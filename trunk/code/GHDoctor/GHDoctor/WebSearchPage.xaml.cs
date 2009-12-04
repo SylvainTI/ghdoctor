@@ -30,8 +30,6 @@ namespace GHDoctor
             modelServicesClient.GetAllCategoriesCompleted +=
                 new EventHandler<GetAllCategoriesCompletedEventArgs>(modelServicesClient_GetAllCategoriesCompleted);
             modelServicesClient.GetAllCategoriesAsync();
-
-
         }
 
         private void categories_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -40,10 +38,13 @@ namespace GHDoctor
             queries.IsEnabled = false;
 			BuscarBtn.IsEnabled = false;
 
+
             ModelServicesSoapClient modelServicesClient = new ModelServicesSoapClient();
             Category selectedCategory = (Category)categories.SelectedItem;
             modelServicesClient.GetCommonQueriesCompleted += new EventHandler<GetCommonQueriesCompletedEventArgs>(modelServicesClient_GetCommonQueriesCompleted);
             modelServicesClient.GetCommonQueriesAsync(selectedCategory.Code);
+
+            CategoryHelpTooltip.Content = selectedCategory.LongDescription;
         }
 
         private void modelServicesClient_GetCommonQueriesCompleted(object sender, GetCommonQueriesCompletedEventArgs e)
@@ -55,6 +56,7 @@ namespace GHDoctor
                 queries.DisplayMemberPath = "SearchString";
 
                 queries.IsEnabled = true;
+
             }
         }
 
@@ -65,11 +67,6 @@ namespace GHDoctor
             categories.DisplayMemberPath = "ShortDescription";
         }
 
-        // Executes when the user navigates to this page.
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-        }
-		
 		private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             if (this._contentLoaded)
@@ -94,6 +91,8 @@ namespace GHDoctor
 		private void queries_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
 		{
 			BuscarBtn.IsEnabled = true;
+            CommonQuery selectedCommonQuery = (CommonQuery)queries.SelectedItem;
+            CommonQueryHelpTooltip.Content = selectedCommonQuery.Description;
 		}
     }
 }

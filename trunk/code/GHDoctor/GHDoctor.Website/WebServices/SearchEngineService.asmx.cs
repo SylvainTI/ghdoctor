@@ -24,5 +24,13 @@ namespace GHDoctor.Website.WebServices
             GHDoctorService svc = new GHDoctorService();
             return svc.GetNumberOfResultsForSearch(query);
         }
+
+        [WebMethod]
+        public long GetNumberOfResultsForSiteSearch(string query, string site)
+        {
+            GHDoctorService svc = new GHDoctorService();
+            return svc.GetNumberOfResultsForSiteSearch(query, site);
+        }
+
     }
 }

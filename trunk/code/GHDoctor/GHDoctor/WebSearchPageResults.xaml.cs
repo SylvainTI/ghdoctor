@@ -34,13 +34,7 @@ namespace GHDoctor
             ResultsSummaryLbl.Text = "Se han encontrado aproximadamente " + cantResults + " resultados!";
         }
 
-        // Executes when the user navigates to this page.
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-
-        }
-
-		private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+  		private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             if (this._contentLoaded)
             {
