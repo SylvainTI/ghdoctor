@@ -79,6 +79,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DescriptiveTreeViewItem.xaml.cs">
+      <DependentUpon>DescriptiveTreeViewItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DiagnoserPage.xaml.cs">
       <DependentUpon>DiagnoserPage.xaml</DependentUpon>
     </Compile>
@@ -89,6 +92,10 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Page Include="AboutPage.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DescriptiveTreeViewItem.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -137,17 +144,17 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ModelServicesReference\ModelServices.disco" />
-    <None Include="Service References\ModelServicesReference\configuration91.svcinfo" />
-    <None Include="Service References\ModelServicesReference\configuration.svcinfo" />
-    <None Include="Service References\ModelServicesReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Service References\SearchEngineService\SearchEngineService.disco" />
     <None Include="Service References\SearchEngineService\configuration91.svcinfo" />
     <None Include="Service References\SearchEngineService\configuration.svcinfo" />
     <None Include="Service References\SearchEngineService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ModelServicesReference\ModelServices.disco" />
+    <None Include="Service References\ModelServicesReference\configuration91.svcinfo" />
+    <None Include="Service References\ModelServicesReference\configuration.svcinfo" />
+    <None Include="Service References\ModelServicesReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -6,12 +6,20 @@
   </PropertyGroup>
   <ItemGroup>
     <_SolutionProjectProjects Include="GHDoctor.Core\GHDoctor.Core.csproj" />
-    <_SolutionProjectProjects Include="GHDoctor.WebServices\GHDoctor.WebServices.csproj" />
+    <_SolutionProjectProjects Include="GHDoctor.Website\GHDoctor.Website.csproj" />
     <_SolutionProjectProjects Include="GHDoctorTests\GHDoctorTests.csproj" />
     <_SolutionProjectProjects Include="GHDoctor\GHDoctor.csproj" />
   </ItemGroup>
   <ItemGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
-    <BuildLevel1 Include="GHDoctor.WebServices\GHDoctor.WebServices.csproj">
+    <BuildLevel0 Include="GHDoctor.Core\GHDoctor.Core.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="GHDoctor\GHDoctor.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel1 Include="GHDoctor.Website\GHDoctor.Website.csproj">
       <Configuration>Debug</Configuration>
       <Platform>AnyCPU</Platform>
     </BuildLevel1>
@@ -19,17 +27,17 @@
       <Configuration>Debug</Configuration>
       <Platform>AnyCPU</Platform>
     </BuildLevel1>
-    <BuildLevel1 Include="GHDoctor\GHDoctor.csproj">
-      <Configuration>Debug</Configuration>
-      <Platform>AnyCPU</Platform>
-    </BuildLevel1>
-    <BuildLevel0 Include="GHDoctor.Core\GHDoctor.Core.csproj">
-      <Configuration>Debug</Configuration>
-      <Platform>AnyCPU</Platform>
-    </BuildLevel0>
   </ItemGroup>
   <ItemGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
-    <BuildLevel1 Include="GHDoctor.WebServices\GHDoctor.WebServices.csproj">
+    <BuildLevel0 Include="GHDoctor.Core\GHDoctor.Core.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="GHDoctor\GHDoctor.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel1 Include="GHDoctor.Website\GHDoctor.Website.csproj">
       <Configuration>Release</Configuration>
       <Platform>AnyCPU</Platform>
     </BuildLevel1>
@@ -37,14 +45,6 @@
       <Configuration>Release</Configuration>
       <Platform>AnyCPU</Platform>
     </BuildLevel1>
-    <BuildLevel1 Include="GHDoctor\GHDoctor.csproj">
-      <Configuration>Release</Configuration>
-      <Platform>AnyCPU</Platform>
-    </BuildLevel1>
-    <BuildLevel0 Include="GHDoctor.Core\GHDoctor.Core.csproj">
-      <Configuration>Release</Configuration>
-      <Platform>AnyCPU</Platform>
-    </BuildLevel0>
   </ItemGroup>
   <UsingTask TaskName="Microsoft.Build.Tasks.CreateTemporaryVCProject" AssemblyName="Microsoft.Build.Tasks.v3.5, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <UsingTask TaskName="Microsoft.Build.Tasks.ResolveVCProjectOutput" AssemblyName="Microsoft.Build.Tasks.v3.5, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -71,60 +71,22 @@
   <PropertyGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
     <CurrentSolutionConfigurationContents>
       <SolutionConfiguration xmlns="">
-        <ProjectConfiguration Project="{8FE1C711-0018-4606-9E2F-F34CC9B40BF0}">Debug|AnyCPU</ProjectConfiguration>
         <ProjectConfiguration Project="{8C568F43-DB3C-49BC-BE5E-4E704196A2B5}">Debug|AnyCPU</ProjectConfiguration>
         <ProjectConfiguration Project="{21C236DB-D28D-4C44-8E44-4CE8E4CCD2BB}">Debug|AnyCPU</ProjectConfiguration>
         <ProjectConfiguration Project="{A8E53625-13FD-469E-AC8D-F1ED0C8BC6A5}">Debug|AnyCPU</ProjectConfiguration>
-        <ProjectConfiguration Project="{197E7789-E98E-4E6A-BCC1-1E2B739FD311}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C5DF30A0-5606-45A5-82BF-F223C60F8ADF}">Debug|AnyCPU</ProjectConfiguration>
       </SolutionConfiguration>
     </CurrentSolutionConfigurationContents>
   </PropertyGroup>
   <PropertyGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
     <CurrentSolutionConfigurationContents>
       <SolutionConfiguration xmlns="">
-        <ProjectConfiguration Project="{8FE1C711-0018-4606-9E2F-F34CC9B40BF0}">Release|AnyCPU</ProjectConfiguration>
         <ProjectConfiguration Project="{8C568F43-DB3C-49BC-BE5E-4E704196A2B5}">Release|AnyCPU</ProjectConfiguration>
         <ProjectConfiguration Project="{21C236DB-D28D-4C44-8E44-4CE8E4CCD2BB}">Release|AnyCPU</ProjectConfiguration>
         <ProjectConfiguration Project="{A8E53625-13FD-469E-AC8D-F1ED0C8BC6A5}">Release|AnyCPU</ProjectConfiguration>
-        <ProjectConfiguration Project="{197E7789-E98E-4E6A-BCC1-1E2B739FD311}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C5DF30A0-5606-45A5-82BF-F223C60F8ADF}">Release|AnyCPU</ProjectConfiguration>
       </SolutionConfiguration>
     </CurrentSolutionConfigurationContents>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(AspNetConfiguration)' == 'Debug' ">
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetVirtualPath>/GHDoctorSite</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetVirtualPath>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath>GHDoctorSite\</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetTargetPath>PrecompiledWeb\GHDoctorSite\</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetTargetPath>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetForce>true</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetForce>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetUpdateable>true</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetUpdateable>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetDebug>True</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetDebug>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetKeyFile>
-    </Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetKeyFile>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetKeyContainer>
-    </Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetKeyContainer>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetDelaySign>
-    </Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetDelaySign>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetAPTCA>
-    </Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetAPTCA>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetFixedNames>false</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetFixedNames>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetTargetPath Condition=" '$(OutDir)' != '' ">$(OutDir)_PublishedWebsites\GHDoctorSite\</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetTargetPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(AspNetConfiguration)' == 'Release' ">
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetVirtualPath>/GHDoctorSite</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetVirtualPath>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath>GHDoctorSite\</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetTargetPath>PrecompiledWeb\GHDoctorSite\</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetTargetPath>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetForce>true</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetForce>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetUpdateable>true</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetUpdateable>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetDebug>False</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetDebug>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetKeyFile>
-    </Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetKeyFile>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetKeyContainer>
-    </Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetKeyContainer>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetDelaySign>
-    </Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetDelaySign>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetAPTCA>
-    </Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetAPTCA>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetFixedNames>false</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetFixedNames>
-    <Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetTargetPath Condition=" '$(OutDir)' != '' ">$(OutDir)_PublishedWebsites\GHDoctorSite\</Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetTargetPath>
   </PropertyGroup>
   <Target Name="ValidateSolutionConfiguration">
     <Error Text="The specified solution configuration &quot;$(Configuration)|$(Platform)&quot; is invalid. Please specify a valid solution configuration using the Configuration and Platform properties (e.g. MSBuild.exe Solution.sln /p:Configuration=Debug /p:Platform=&quot;Any CPU&quot;) or leave those properties blank to use the default solution configuration." Code="MSB4126" HelpKeyword="MSBuild.SolutionInvalidSolutionConfiguration" Condition="('$(CurrentSolutionConfigurationContents)' == '') and ('$(SkipInvalidConfigurations)' != 'true')" />
@@ -134,60 +96,7 @@
   <Target Name="ValidateToolsVersions">
     <Error Text="The tools version &quot;$(MSBuildToolsVersion)&quot; of the solution does not support building projects with a different tools version." Code="MSB4149" HelpKeyword="MSBuild.SolutionToolsVersionDoesNotSupportProjectToolsVersion" Condition="'$(MSBuildToolsVersion)' == '2.0' and ('$(ProjectToolsVersion)' != '2.0' and '$(ProjectToolsVersion)' != '')" />
   </Target>
-  <Target Name="GetFrameworkPathAndRedistList">
-    <GetFrameworkPath>
-      <Output TaskParameter="Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition="'$(MSBuildToolsVersion)' == '2.0'" />
-      <Output TaskParameter="FrameworkVersion35Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition=" '$(TargetFrameworkVersion)' == 'v3.5' and '$(MSBuildToolsVersion)' != '2.0'" />
-      <Output TaskParameter="FrameworkVersion30Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition=" ('$(TargetFrameworkVersion)' == 'v3.0' or '$(TargetFrameworkVersion)' == 'v3.5') and '$(MSBuildToolsVersion)' != '2.0'" />
-      <Output TaskParameter="FrameworkVersion20Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition=" ('$(TargetFrameworkVersion)' == 'v2.0' or '$(TargetFrameworkVersion)' == 'v3.0' or '$(TargetFrameworkVersion)' == 'v3.5') and '$(MSBuildToolsVersion)' != '2.0'" />
-    </GetFrameworkPath>
-    <CreateItem Include="@(_CombinedTargetFrameworkDirectoriesItem->'%(Identity)\RedistList\*.xml')">
-      <Output TaskParameter="Include" ItemName="InstalledAssemblyTables" />
-    </CreateItem>
-  </Target>
-  <Target Name="GHDoctorSite" DependsOnTargets=";GetFrameworkPathAndRedistList" Condition=" ('$(CurrentSolutionConfigurationContents)' != '') and (false or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') )) ">
-    <CreateItem Include="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath)\Bin\*.refresh">
-      <Output TaskParameter="Include" ItemName="Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_RefreshFile" />
-    </CreateItem>
-    <ReadLinesFromFile File="%(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_RefreshFile.Identity)" Condition=" '%(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_RefreshFile.Identity)' != '' ">
-      <Output TaskParameter="Lines" ItemName="Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_ReferenceRelPath" />
-    </ReadLinesFromFile>
-    <CombinePath BasePath="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath)" Paths="@(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_ReferenceRelPath)">
-      <Output TaskParameter="CombinedPaths" ItemName="Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References" />
-    </CombinePath>
-    <Copy SourceFiles="@(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References->'%(FullPath)')" DestinationFolder="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath)\Bin\" Condition="!Exists('%(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References.Identity)')" ContinueOnError="true" />
-    <ResolveAssemblyReference Assemblies="@(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References->'%(FullPath)')" TargetFrameworkDirectories="@(_CombinedTargetFrameworkDirectoriesItem)" InstalledAssemblyTables="@(InstalledAssemblyTables)" SearchPaths="{RawFileName};{TargetFrameworkDirectory};{GAC}" FindDependencies="true" FindSatellites="true" FindSerializationAssemblies="true" FindRelatedFiles="true" Condition="Exists('%(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References.Identity)')">
-      <Output TaskParameter="CopyLocalFiles" ItemName="Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_CopyLocalFiles" />
-    </ResolveAssemblyReference>
-    <Copy SourceFiles="@(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_CopyLocalFiles)" DestinationFiles="@(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_CopyLocalFiles->'$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath)\Bin\%(DestinationSubDirectory)%(Filename)%(Extension)')" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
-    <AspNetCompiler VirtualPath="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetVirtualPath)" PhysicalPath="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath)" TargetPath="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetTargetPath)" Force="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetForce)" Updateable="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetUpdateable)" Debug="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetDebug)" KeyFile="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetKeyFile)" KeyContainer="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetKeyContainer)" DelaySign="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetDelaySign)" AllowPartiallyTrustedCallers="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetAPTCA)" FixedNames="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetFixedNames)" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
-    <Message Text="Skipping because the &quot;$(AspNetConfiguration)&quot; configuration is not supported for this web project.  You can use the AspNetConfiguration property to override the configuration used for building web projects, by adding /p:AspNetConfiguration=&lt;value&gt; to the command line. Currently web projects only support Debug and Release configurations." Condition="!((false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release'))" />
-  </Target>
-  <Target Name="GHDoctorSite:Clean" DependsOnTargets=";GetFrameworkPathAndRedistList">
-    <Message Text="Web projects do not support the &quot;Clean&quot; target.  Continuing with remaining projects ..." />
-  </Target>
-  <Target Name="GHDoctorSite:Rebuild" DependsOnTargets=";GetFrameworkPathAndRedistList" Condition=" ('$(CurrentSolutionConfigurationContents)' != '') and (false or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') )) ">
-    <CreateItem Include="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath)\Bin\*.refresh">
-      <Output TaskParameter="Include" ItemName="Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_Rebuild_RefreshFile" />
-    </CreateItem>
-    <ReadLinesFromFile File="%(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_Rebuild_RefreshFile.Identity)" Condition=" '%(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_Rebuild_RefreshFile.Identity)' != '' ">
-      <Output TaskParameter="Lines" ItemName="Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_Rebuild_ReferenceRelPath" />
-    </ReadLinesFromFile>
-    <CombinePath BasePath="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath)" Paths="@(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_Rebuild_ReferenceRelPath)">
-      <Output TaskParameter="CombinedPaths" ItemName="Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_Rebuild" />
-    </CombinePath>
-    <Copy SourceFiles="@(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_Rebuild->'%(FullPath)')" DestinationFolder="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath)\Bin\" Condition="!Exists('%(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_Rebuild.Identity)')" ContinueOnError="true" />
-    <ResolveAssemblyReference Assemblies="@(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_Rebuild->'%(FullPath)')" TargetFrameworkDirectories="@(_CombinedTargetFrameworkDirectoriesItem)" InstalledAssemblyTables="@(InstalledAssemblyTables)" SearchPaths="{RawFileName};{TargetFrameworkDirectory};{GAC}" FindDependencies="true" FindSatellites="true" FindSerializationAssemblies="true" FindRelatedFiles="true" Condition="Exists('%(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_Rebuild.Identity)')">
-      <Output TaskParameter="CopyLocalFiles" ItemName="Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_Rebuild_CopyLocalFiles" />
-    </ResolveAssemblyReference>
-    <Copy SourceFiles="@(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_Rebuild_CopyLocalFiles)" DestinationFiles="@(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_References_Rebuild_CopyLocalFiles->'$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath)\Bin\%(DestinationSubDirectory)%(Filename)%(Extension)')" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
-    <AspNetCompiler VirtualPath="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetVirtualPath)" PhysicalPath="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetPhysicalPath)" TargetPath="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetTargetPath)" Force="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetForce)" Updateable="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetUpdateable)" Debug="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetDebug)" KeyFile="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetKeyFile)" KeyContainer="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetKeyContainer)" DelaySign="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetDelaySign)" AllowPartiallyTrustedCallers="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetAPTCA)" FixedNames="$(Project_8FE1C711-0018-4606-9E2F-F34CC9B40BF0_AspNetFixedNames)" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
-    <Message Text="Skipping because the &quot;$(AspNetConfiguration)&quot; configuration is not supported for this web project.  You can use the AspNetConfiguration property to override the configuration used for building web projects, by adding /p:AspNetConfiguration=&lt;value&gt; to the command line. Currently web projects only support Debug and Release configurations." Condition="!((false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release'))" />
-  </Target>
-  <Target Name="GHDoctorSite:Publish" DependsOnTargets=";GetFrameworkPathAndRedistList">
-    <Message Text="Web projects do not support the &quot;Publish&quot; target.  Continuing with remaining projects ..." />
-  </Target>
-  <Target Name="GHDoctor" DependsOnTargets="GHDoctor_Core" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(GHDoctorBuildOutput)">
+  <Target Name="GHDoctor" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(GHDoctorBuildOutput)">
     <MSBuild Projects="GHDoctor\GHDoctor.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
       <Output TaskParameter="TargetOutputs" ItemName="GHDoctorBuildOutput" />
     </MSBuild>
@@ -195,11 +104,11 @@
       <Output TaskParameter="TargetOutputs" ItemName="GHDoctorBuildOutput" />
     </MSBuild>
   </Target>
-  <Target Name="GHDoctor:Clean" DependsOnTargets="GHDoctor_Core:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+  <Target Name="GHDoctor:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
     <MSBuild Projects="GHDoctor\GHDoctor.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
     <MSBuild Projects="GHDoctor\GHDoctor.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
   </Target>
-  <Target Name="GHDoctor:Rebuild" DependsOnTargets="GHDoctor_Core:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(GHDoctorBuildOutput)">
+  <Target Name="GHDoctor:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(GHDoctorBuildOutput)">
     <MSBuild Projects="GHDoctor\GHDoctor.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
       <Output TaskParameter="TargetOutputs" ItemName="GHDoctorBuildOutput" />
     </MSBuild>
@@ -207,7 +116,7 @@
       <Output TaskParameter="TargetOutputs" ItemName="GHDoctorBuildOutput" />
     </MSBuild>
   </Target>
-  <Target Name="GHDoctor:Publish" DependsOnTargets="GHDoctor_Core:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+  <Target Name="GHDoctor:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
     <MSBuild Projects="GHDoctor\GHDoctor.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
     <MSBuild Projects="GHDoctor\GHDoctor.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
   </Target>
@@ -259,29 +168,29 @@
     <MSBuild Projects="GHDoctor.Core\GHDoctor.Core.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
     <MSBuild Projects="GHDoctor.Core\GHDoctor.Core.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
   </Target>
-  <Target Name="GHDoctor_WebServices" DependsOnTargets="GHDoctor_Core" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(GHDoctor_WebServicesBuildOutput)">
-    <MSBuild Projects="GHDoctor.WebServices\GHDoctor.WebServices.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
-      <Output TaskParameter="TargetOutputs" ItemName="GHDoctor_WebServicesBuildOutput" />
+  <Target Name="GHDoctor_Website" DependsOnTargets="GHDoctor_Core" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(GHDoctor_WebsiteBuildOutput)">
+    <MSBuild Projects="GHDoctor.Website\GHDoctor.Website.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="GHDoctor_WebsiteBuildOutput" />
     </MSBuild>
-    <MSBuild Projects="GHDoctor.WebServices\GHDoctor.WebServices.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
-      <Output TaskParameter="TargetOutputs" ItemName="GHDoctor_WebServicesBuildOutput" />
-    </MSBuild>
-  </Target>
-  <Target Name="GHDoctor_WebServices:Clean" DependsOnTargets="GHDoctor_Core:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
-    <MSBuild Projects="GHDoctor.WebServices\GHDoctor.WebServices.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
-    <MSBuild Projects="GHDoctor.WebServices\GHDoctor.WebServices.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
-  </Target>
-  <Target Name="GHDoctor_WebServices:Rebuild" DependsOnTargets="GHDoctor_Core:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(GHDoctor_WebServicesBuildOutput)">
-    <MSBuild Projects="GHDoctor.WebServices\GHDoctor.WebServices.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
-      <Output TaskParameter="TargetOutputs" ItemName="GHDoctor_WebServicesBuildOutput" />
-    </MSBuild>
-    <MSBuild Projects="GHDoctor.WebServices\GHDoctor.WebServices.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
-      <Output TaskParameter="TargetOutputs" ItemName="GHDoctor_WebServicesBuildOutput" />
+    <MSBuild Projects="GHDoctor.Website\GHDoctor.Website.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="GHDoctor_WebsiteBuildOutput" />
     </MSBuild>
   </Target>
-  <Target Name="GHDoctor_WebServices:Publish" DependsOnTargets="GHDoctor_Core:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
-    <MSBuild Projects="GHDoctor.WebServices\GHDoctor.WebServices.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
-    <MSBuild Projects="GHDoctor.WebServices\GHDoctor.WebServices.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  <Target Name="GHDoctor_Website:Clean" DependsOnTargets="GHDoctor_Core:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="GHDoctor.Website\GHDoctor.Website.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="GHDoctor.Website\GHDoctor.Website.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="GHDoctor_Website:Rebuild" DependsOnTargets="GHDoctor_Core:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(GHDoctor_WebsiteBuildOutput)">
+    <MSBuild Projects="GHDoctor.Website\GHDoctor.Website.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="GHDoctor_WebsiteBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="GHDoctor.Website\GHDoctor.Website.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="GHDoctor_WebsiteBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="GHDoctor_Website:Publish" DependsOnTargets="GHDoctor_Core:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="GHDoctor.Website\GHDoctor.Website.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="GHDoctor.Website\GHDoctor.Website.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
   </Target>
   <Target Name="Build" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(CollectedBuildOutput)">
     <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
@@ -289,7 +198,6 @@
     </MSBuild>
     <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
     <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
-    <CallTarget Targets="GHDoctorSite" RunEachTargetSeparately="true" />
     <MSBuild Condition="@(BuildLevel1) != ''" Projects="@(BuildLevel1)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
       <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
     </MSBuild>
@@ -300,7 +208,6 @@
     <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Clean" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
     <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
     <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
-    <CallTarget Targets="GHDoctorSite:Clean" RunEachTargetSeparately="true" />
     <MSBuild Condition="@(BuildLevel1) != ''" Projects="@(BuildLevel1)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Clean" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
     <Message Text="The project &quot;%(SkipLevel1.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel1) != ''" />
     <Warning Text="The project configuration for project &quot;%(MissingConfigLevel1.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel1) != ''" />
@@ -312,7 +219,6 @@
     </MSBuild>
     <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
     <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
-    <CallTarget Targets="GHDoctorSite:Rebuild" RunEachTargetSeparately="true" />
     <MSBuild Condition="@(BuildLevel1) != ''" Projects="@(BuildLevel1)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Rebuild" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
       <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
     </MSBuild>
@@ -323,7 +229,6 @@
     <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Publish" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
     <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
     <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
-    <CallTarget Targets="GHDoctorSite:Publish" RunEachTargetSeparately="true" />
     <MSBuild Condition="@(BuildLevel1) != ''" Projects="@(BuildLevel1)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Publish" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
     <Message Text="The project &quot;%(SkipLevel1.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel1) != ''" />
     <Warning Text="The project configuration for project &quot;%(MissingConfigLevel1.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel1) != ''" />

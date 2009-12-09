@@ -5,6 +5,7 @@ using System.Text;
 using System.Net;
 using GHDoctor.Core.Repository;
 using System.Runtime.Serialization;
+using System.Web;
 using System.Web.Script.Serialization;
 
 namespace GHDoctor.Core.Services
@@ -41,8 +42,9 @@ namespace GHDoctor.Core.Services
         public GoogleSearchResults SearchSite(string query, string siteName)
         {
             WebClient webClient = new WebClient();
+            
             string address = @"http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" +
-                query + " site:" + siteName;
+                HttpUtility.UrlEncode("site:") + HttpUtility.UrlEncode(siteName) + HttpUtility.UrlEncode(" " + query); // primero el site
             string result = webClient.DownloadString(address);
             var serializer = new JavaScriptSerializer();
             GoogleSearchResults searchResult = serializer.Deserialize<GoogleSearchResults>(result);
@@ -54,7 +56,7 @@ namespace GHDoctor.Core.Services
         {
             WebClient webClient = new WebClient();
             string address = @"http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" +
-                query;
+                HttpUtility.UrlEncode(query);
             string result = webClient.DownloadString(address);
             var serializer = new JavaScriptSerializer();
             GoogleSearchResults searchResult = serializer.Deserialize<GoogleSearchResults>(result);

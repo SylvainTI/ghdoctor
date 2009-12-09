@@ -15,7 +15,7 @@
           <PublishCopyAppData>True</PublishCopyAppData>
           <ExternalProgram>
           </ExternalProgram>
-          <StartExternalURL>http://dalef.dyndns.org/GHDoctor</StartExternalURL>
+          <StartExternalURL>http://localhost/GHDoctor</StartExternalURL>
           <StartCmdLineArguments>
           </StartCmdLineArguments>
           <StartWorkingDirectory>
