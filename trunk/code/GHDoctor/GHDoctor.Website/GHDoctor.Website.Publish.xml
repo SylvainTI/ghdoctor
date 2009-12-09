@@ -1,26 +1,26 @@
 <publishData>
   <publishTarget publishUrl="C:\Inetpub\GHDoctor\">
-    <file relUrl="bin/zh-Hant/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
-    <file relUrl="bin/System.Web.Silverlight.dll" publishTime="10/05/2008 02:53:18" />
+    <file relUrl="bin/zh-Hans/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
     <file relUrl="bin/de/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
-    <file relUrl="bin/ja/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
     <file relUrl="bin/Newtonsoft.Json.dll" publishTime="11/19/2009 10:43:28" />
+    <file relUrl="bin/ja/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
+    <file relUrl="bin/GHDoctor.Core.dll" publishTime="12/08/2009 16:22:42" />
     <file relUrl="Web.config" publishTime="11/22/2009 20:20:43" />
-    <file relUrl="bin/GHDoctor.Core.dll" publishTime="11/26/2009 20:21:18" />
     <file relUrl="WebServices/ModelServices.asmx" publishTime="11/22/2009 20:25:53" />
     <file relUrl="favicon.ico" publishTime="11/22/2009 20:21:23" />
-    <file relUrl="bin/it/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
     <file relUrl="bin/Newtonsoft.Json.pdb" publishTime="11/19/2009 10:43:28" />
     <file relUrl="Default.htm" publishTime="11/22/2009 20:21:23" />
     <file relUrl="bin/fr/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
-    <file relUrl="bin/zh-Hans/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
-    <file relUrl="bin/GHDoctor.Core.pdb" publishTime="11/26/2009 20:21:18" />
+    <file relUrl="bin/GHDoctor.Core.pdb" publishTime="12/08/2009 16:22:42" />
+    <file relUrl="bin/zh-Hant/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
     <file relUrl="bin/Newtonsoft.Json.xml" publishTime="11/19/2009 10:43:28" />
-    <file relUrl="Silverlight.js" publishTime="11/22/2009 20:21:25" />
+    <file relUrl="bin/it/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
     <file relUrl="bin/ko/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
-    <file relUrl="bin/GHDoctor.Website.dll" publishTime="11/27/2009 01:17:15" />
-    <file relUrl="ClientBin/GHDoctor.xap" publishTime="11/27/2009 01:16:11" />
-    <file relUrl="bin/GHDoctor.Website.pdb" publishTime="11/27/2009 01:17:15" />
+    <file relUrl="bin/GHDoctor.Website.dll" publishTime="12/08/2009 16:33:36" />
+    <file relUrl="ClientBin/GHDoctor.xap" publishTime="12/08/2009 16:33:35" />
+    <file relUrl="bin/System.Web.Silverlight.dll" publishTime="10/05/2008 02:53:18" />
+    <file relUrl="bin/GHDoctor.Website.pdb" publishTime="12/08/2009 16:33:36" />
+    <file relUrl="Silverlight.js" publishTime="11/22/2009 20:21:25" />
     <file relUrl="WebServices/SearchEngineService.asmx" publishTime="11/26/2009 20:10:39" />
     <file relUrl="bin/es/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
   </publishTarget>
