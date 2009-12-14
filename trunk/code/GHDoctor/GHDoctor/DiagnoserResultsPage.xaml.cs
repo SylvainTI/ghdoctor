@@ -27,6 +27,7 @@ namespace GHDoctor
         private long modelSvcResultsToObtain = 0;
         private long queriesResultsObtained = 0;
         private long getNumberOfResultsForSiteSearchCalled = 0;
+        private bool willClose = false;
 
         private ModelServicesSoapClient modelSvc;
 
@@ -51,7 +52,11 @@ namespace GHDoctor
             AddCategoriesToResultsView();
 
             foreach (Category category in categories)
-            {   
+            {
+                if (willClose)
+                {
+                    return;
+                }
                 modelSvc.GetCommonQueriesAsync(category.Code);
             }
         }
@@ -83,12 +88,16 @@ namespace GHDoctor
             CommonQuery query = queries.FirstOrDefault();
             queries.Remove(query);
 
+            if (willClose)
+            {
+                return;
+            }
+
             if (query == null)
             {
                 svcClient_GetNumberOfResultsForSiteSearchCompleted(this, null);
                 return;
             }
-
 
             if (query.SearchString.Contains("site"))
             {
@@ -98,11 +107,7 @@ namespace GHDoctor
             else
             {
                 svcClient.GetNumberOfResultsForSiteSearchAsync(query.SearchString, siteUrl, query);
-                if (queries.Count > 0)
-                {
-                    //CallSearchEngine();
-                }
-                else
+                if (queries.Count == 0)
                 {
                     svcClient_GetNumberOfResultsForSiteSearchCompleted(this, null);
                 }
@@ -113,6 +118,11 @@ namespace GHDoctor
         {
             lock (this)
             {
+                if (willClose)
+                {
+                    return;
+                }
+
                 if (queries.Count > 0)
                 {
                     CommonQuery query = (CommonQuery)e.UserState;
@@ -127,14 +137,22 @@ namespace GHDoctor
 
 
                     Decimal percentageCompleted = new Decimal(100*((float)getNumberOfResultsForSiteSearchCalled / (float)queriesCount));
-                    ThreatsFoundTxt.Text = "Buscando...\n" + queriesResultsObtained + " amenazas encontradas - " + percentageCompleted.ToString(@"0.00") + "% completado";
+
+                    if (queriesResultsObtained == 1 )
+                        ThreatsFoundTxt.Text = "Buscando...\n" + queriesResultsObtained + " amenaza encontrada - " + percentageCompleted.ToString(@"0.00") + "% completado";
+                    else
+                        ThreatsFoundTxt.Text = "Buscando...\n" + queriesResultsObtained + " amenazas encontradas - " + percentageCompleted.ToString(@"0.00") + "% completado";
+
                     CallSearchEngine();
 
                 }
                 else
                 {
                     // DONE
-                    ThreatsFoundTxt.Text = "Se han encontrado " + queriesResultsObtained + " amenazas";
+                    if (queriesResultsObtained == 1)
+                        ThreatsFoundTxt.Text = "Se ha encontrado " + queriesResultsObtained + " amenaza";
+                    else
+                        ThreatsFoundTxt.Text = "Se han encontrado " + queriesResultsObtained + " amenazas";
                 }
             }
         }
@@ -143,6 +161,7 @@ namespace GHDoctor
         {
             if (this._contentLoaded)
             {
+                willClose = true;
                 /*
                 modelSvc.CloseAsync();
                 svcClient.CloseAsync();
@@ -158,6 +177,7 @@ namespace GHDoctor
         {
             if (this._contentLoaded)
             {
+                willClose = true;
                 /*
                 modelSvc.CloseAsync();
                 svcClient.CloseAsync();
@@ -189,7 +209,10 @@ namespace GHDoctor
         private void UpdateCategoriesItemHeader(TreeViewItem item)
         {
             Category category = (Category)item.DataContext;
-            item.Header = category.ShortDescription + " - " + (item.Items.Count() - 1) + " amenazas";
+            if ((item.Items.Count() - 1) == 1)
+                item.Header = category.ShortDescription + " - " + (item.Items.Count() - 1) + " amenaza";
+            else
+                item.Header = category.ShortDescription + " - " + (item.Items.Count() - 1) + " amenazas";
         }
 
         private void AddResultToTreeView(CommonQuery query, long qty)

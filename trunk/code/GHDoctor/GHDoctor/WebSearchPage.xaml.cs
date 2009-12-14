@@ -16,7 +16,6 @@ namespace GHDoctor
 {
     public partial class WebSearchPage : Page
     {
-
         public WebSearchPage()
         {
             InitializeComponent();

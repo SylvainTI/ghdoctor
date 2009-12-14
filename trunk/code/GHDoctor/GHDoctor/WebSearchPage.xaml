@@ -40,16 +40,17 @@
 				</RadialGradientBrush>
 			</Path.Stroke>
 		</Path>
-        <TextBox x:Name="CategoryHelp" Height="32" HorizontalAlignment="Left" Margin="624,216,0,0" VerticalAlignment="Top" Width="20" Text="?" TextWrapping="Wrap" FontSize="18.667" TextAlignment="Center" Foreground="#FF5452FF" SelectionBackground="{x:Null}" SelectionForeground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}">
-            <ToolTipService.ToolTip>
+        <TextBlock x:Name="CategoryHelp" Height="24" HorizontalAlignment="Left" Margin="624,216,0,0" VerticalAlignment="Top" Width="20" Text="?" TextWrapping="Wrap" FontSize="18.667" TextAlignment="Center" Foreground="#FF0010FF">
+                        <ToolTipService.ToolTip>
                 <ToolTip x:Name="CategoryHelpTooltip" FontSize="16" Content=""></ToolTip>
             </ToolTipService.ToolTip>
-        </TextBox>
-        <TextBox x:Name="CommonQueryHelp" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="18.667" Foreground="#FF5452FF" HorizontalAlignment="Left" Margin="624,272,0,0" Width="20" SelectionBackground="{x:Null}" SelectionForeground="{x:Null}" Text="?" TextAlignment="Center" TextWrapping="Wrap" Height="32" VerticalAlignment="Top">
-            <ToolTipService.ToolTip>
+        </TextBlock>
+
+        <TextBlock x:Name="CommonQueryHelp" Height="24" HorizontalAlignment="Left" Margin="624,276,0,0" VerticalAlignment="Top" Width="20" FontSize="18.667" Foreground="#FF0010FF" Text="?" TextAlignment="Center" TextWrapping="Wrap">
+        <ToolTipService.ToolTip>
                 <ToolTip x:Name="CommonQueryHelpTooltip" FontSize="16" Content=""></ToolTip>
             </ToolTipService.ToolTip>
-        </TextBox>
+        </TextBlock>
 
     </Grid>
 </navigation:Page>
